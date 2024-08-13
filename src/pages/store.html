@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MB - Store</title>
+    <link rel="stylesheet" href="../styles/tailwind.css" />
+    <link rel="icon" href="../assets/icons/coffee-cup.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');</style></head>
+            <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');</style>
+            <script>
+                tailwind.config = {
+                    theme: {
+                        colors: {
+                            'light-green': '#606C38',
+                            'dark-green': '#283618',
+                            'light-brown': '#DDA15E',
+                            'dark-brown': '#BC6C25',
+                            white: '#FFFFFF',
+                        },
+                    },
+                };
+            </script>
+    <body class="flex flex-col min-h-screen">
+        <header class="bg-light-brown">
+            <nav
+                class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+                aria-label="Global"
+            >
+                <div class="flex lg:flex-1">
+                    <a href="../../index.html" class="-m-1.5 p-1.5 z-50">
+                        <img
+                            class="h-8 w-auto"
+                            src="../assets/icons/coffee-cup.png"
+                            alt=""
+                        />
+                    </a>
+                </div>
+                <div class="flex lg:hidden">
+                    <button
+                        type="button"
+                        id="mobileButton"
+                        class="text-gray-700 -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 z-50"
+                    >
+                        <svg
+                            class="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            aria-hidden="true"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                            />
+                        </svg>
+                    </button>
+                </div>
+                <div class="hidden lg:flex lg:gap-x-12">
+                    <a
+                        href="../pages/about.html"
+                        class="text-gray-900 text-sm font-semibold leading-6"
+                        >About us</a
+                    >
+                    <a
+                        href="../pages/store.html"
+                        class="text-gray-900 text-sm font-semibold leading-6"
+                        >Store</a
+                    >
+                    <a
+                        href="../pages/contact.html"
+                        class="text-gray-900 text-sm font-semibold leading-6"
+                        >Contact</a
+                    >
+                </div>
+                <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                    <a href="../pages/cart.html">
+                        <img
+                            class="size-9"
+                            src="../assets/icons/shopping-cart.svg"
+                            alt=""
+                        />
+                    </a>
+                </div>
+            </nav>
+            <div id="mobileMenu" class="hidden lg:hidden z-50" role="dialog" aria-modal="true">
+                <div class="fixed inset-0 z-10"></div>
+                <div
+                    class="sm:ring-light-brown fixed inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 bg-light-brown"
+                >
+                    <div class="mt-6 flow-root">
+                        <div class="divide-gray-500/10 -my-6 divide-y">
+                            <div class="space-y-2 py-6">
+                                <div class="-mx-3">
+                                    <div
+                                        class="mt-12 space-y-2"
+                                        id="disclosure-1"
+                                    >
+                                        <a
+                                            href="./about.html"
+                                            class="text-gray-900 hover:bg-gray-50 block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7"
+                                            >About us</a
+                                        >
+                                        <a
+                                            href="./store.html"
+                                            class="text-gray-900 hover:bg-gray-50 block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7"
+                                            >Store</a
+                                        >
+                                        <a
+                                            href="./contact.html"
+                                            class="text-gray-900 hover:bg-gray-50 block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7"
+                                            >Contact</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="py-6">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="bg-white">
+            <div>
+                <div class="relative z-40 lg:hidden" role="dialog" aria-modal="true">
+                <div class="fixed inset-0 bg-black bg-opacity-25" aria-hidden="true"></div>
+                <div class="fixed inset-0 z-40 flex">
+                    <div class="relative mr-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-12 shadow-xl">
+                    <div class="flex items-center justify-between px-4">
+                        <h2 class="text-lg font-medium text-gray-900">Filters</h2>
+                        <button type="button" class="-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-white p-2 text-gray-400">
+                        <span class="sr-only">Close menu</span>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                        </button>
+                    </div>
+                    <form class="mt-4 border-t border-gray-200">
+                        <div class="border-t border-gray-200 px-4 py-6">
+                        <h3 class="-mx-2 -my-3 flow-root">
+                            <span class="px-2 font-medium text-gray-900">Origin</span>
+                        </h3>
+                        <div class="pt-6" id="filter-section-mobile-0">
+                            <div class="space-y-6">
+                            <div class="flex items-center">
+                                <input id="filter-mobile-origin-0" name="origin[]" value="white" type="radio" class="h-4 w-4 rounded border-gray-300 text-dark-brown focus:ring-light-brown">
+                                <label for="filter-mobile-origin-0" class="ml-3 min-w-0 flex-1 text-gray-500">Ethiopia</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="filter-mobile-origin-1" name="origin[]" value="beige" type="radio" class="h-4 w-4 rounded border-gray-300 text-dark-brown focus:ring-light-brown">
+                                <label for="filter-mobile-origin-1" class="ml-3 min-w-0 flex-1 text-gray-500">Colombia</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="filter-mobile-origin-2" name="origin[]" value="blue" type="radio" checked class="h-4 w-4 rounded border-gray-300 text-dark-brown focus:ring-light-brown">
+                                <label for="filter-mobile-origin-2" class="ml-3 min-w-0 flex-1 text-gray-500">Guatemala</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="filter-mobile-origin-3" name="origin[]" value="brown" type="radio" class="h-4 w-4 rounded border-gray-300 text-dark-brown focus:ring-light-brown">
+                                <label for="filter-mobile-origin-3" class="ml-3 min-w-0 flex-1 text-gray-500">Costa Rica</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="filter-mobile-origin-4" name="origin[]" value="purple" type="radio" class="h-4 w-4 rounded border-gray-300 text-dark-brown focus:ring-light-brown">
+                                <label for="filter-mobile-origin-4" class="ml-3 min-w-0 flex-1 text-gray-500">Brazil</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="filter-mobile-origin-5" name="origin[]" value="green" type="radio" class="h-4 w-4 rounded border-gray-300 text-dark-brown focus:ring-light-brown">
+                                <label for="filter-mobile-origin-5" class="ml-3 min-w-0 flex-1 text-gray-500">Honduras</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="filter-mobile-origin-6" name="origin[]" value="purple" type="radio" class="h-4 w-4 rounded border-gray-300 text-dark-brown focus:ring-light-brown">
+                                <label for="filter-mobile-origin-6" class="ml-3 min-w-0 flex-1 text-gray-500">Indonesia</label>
+                            </div>
+                            </div>
+                        </div>
+                        <a href="http://localhost:5173/src/pages/store.html">Clear filters</a>
+                        </div>
+                        <div class="border-t border-gray-200 px-4 py-6">
+                        </div>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+                </div>
+                <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-12">
+                    <h1 class="text-4xl font-bold tracking-tight text-gray-900">Discover our flavours</h1>
+                    <div class="flex items-center">
+                    <div class="relative inline-block text-left">
+                        <div>
+                        <button type="button" id="sortButton" class="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900" id="menu-button" aria-expanded="false" aria-haspopup="true">
+                            Sort
+                            <svg class="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        </div>
+                        <div class="sortDiv hidden absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-light-brown ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        <div class="sortDiv py-1" role="none">
+                            <a href="#" id="ascSort" class="block px-4 py-2 text-sm text-gray-500" role="menuitem" tabindex="-1" id="menu-item-3">Price: Low to High</a>
+                            <a href="#" id="descSort" class="block px-4 py-2 text-sm text-gray-500" role="menuitem" tabindex="-1" id="menu-item-4">Price: High to Low</a>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <section aria-labelledby="products-heading" class="pb-24 pt-6">
+                    <h2 id="products-heading" class="sr-only">Products</h2>
+                    <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
+                    <form class="hidden lg:block">
+                        <h2 class="border-b border-gray-200 py-2 text-lg font-medium text-gray-900">Filters</h2>
+                        <div class="border-b border-gray-200 py-6">
+                        <h3 class="-my-3 flow-root">
+                            <span class="font-medium text-gray-900">Origin</span>
+                            
+                        </h3>
+                        <div class="pt-6" id="filter-section-0">
+                            <div class="space-y-4">
+                            <div class="flex items-center">
+                                <input id="filter-origin-0" name="origin[]" value="Ethiopia" type="radio" class="h-4 w-4 rounded border-gray-300 text-dark-brown focus:ring-light-brown">
+                                <label for="filter-origin-0" class="ml-3 text-sm text-gray-600">Ethiopia</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="filter-origin-1" name="origin[]" value="Colombia" type="radio" class="h-4 w-4 rounded border-gray-300 text-dark-brown focus:ring-light-brown">
+                                <label for="filter-origin-1" class="ml-3 text-sm text-gray-600">Colombia</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="filter-origin-2" name="origin[]" value="Guatemala" type="radio" class="h-4 w-4 rounded border-gray-300 text-dark-brown focus:ring-light-brown">
+                                <label for="filter-origin-2" class="ml-3 text-sm text-gray-600">Guatemala</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="filter-origin-3" name="origin[]" value="Costa Rica" type="radio" class="h-4 w-4 rounded border-gray-300 text-dark-brown focus:ring-light-brown">
+                                <label for="filter-origin-3" class="ml-3 text-sm text-gray-600">Costa Rica</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="filter-origin-4" name="origin[]" value="Brazil" type="radio" class="h-4 w-4 rounded border-gray-300 text-dark-brown focus:ring-light-brown">
+                                <label for="filter-origin-4" class="ml-3 text-sm text-gray-600">Brazil</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="filter-origin-5" name="origin[]" value="Honduras" type="radio" class="h-4 w-4 rounded border-gray-300 text-dark-brown focus:ring-light-brown">
+                                <label for="filter-origin-5" class="ml-3 text-sm text-gray-600">Honduras</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="filter-origin-6" name="origin[]" value="Indonesia" type="radio" class="h-4 w-4 rounded border-gray-300 text-dark-brown focus:ring-light-brown">
+                                <label for="filter-origin-6" class="ml-3 text-sm text-gray-600">Indonesia</label>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="border-gray-200 py-6">
+                        <a href="http://localhost:5173/src/pages/store.html">Clear filters</a>
+                        </div>
+                    </form>
+                    <div id="itemGrid" class="lg:col-span-3 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    </div>
+                    </section>
+                </main>
+            </div>
+            </div>
+        </main>
+        <footer class="bg-light-brown">
+            <div class="mx-auto flex max-w-7xl items-center justify-between p-7 lg:px-8 z-50">
+                <div class="container flex flex-wrap items-center justify-center mx-auto space-y-4 sm:justify-between sm:space-y-0">
+                    <div class="flex flex-row pr-3 space-x-4 sm:space-x-8">
+                        <ul class="flex flex-wrap items-center space-x-4 sm:space-x-8">
+                            <li>
+                                <a href="https://www.termsfeed.com/live/f7588e74-8998-4570-8dfd-d9f84723e765">Terms of Use</a>
+                            </li>
+                            <li>
+                                <a href="https://www.termsfeed.com/live/f7588e74-8998-4570-8dfd-d9f84723e765">Privacy</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="flex flex-wrap text-3xl pl-3 space-x-4 sm:space-x-8">
+                        <li>
+                            <a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://x.com/home"><i class="fa-brands fa-x-twitter"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <script src="../js/nav.js"></script>
+        <script src="../js/cart&store.js"></script>
+        <script src="../js/objects.js"></script>
+    </body>
+</html>

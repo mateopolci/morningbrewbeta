@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Morning Brew</title>
+        <link rel="stylesheet" href="./src/styles/tailwind.css" />
+        <link rel="icon" href="./src/assets/icons/coffee-cup.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');</style>
+            <script>
+                tailwind.config = {
+                    theme: {
+                        colors: {
+                            'light-green': '#606C38',
+                            'dark-green': '#283618',
+                            'light-brown': '#DDA15E',
+                            'dark-brown': '#BC6C25',
+                            white: '#FFFFFF',
+                        },
+                    },
+                };
+            </script>
+    </head>
+    <body>
+        <header class="bg-light-brown z-50  ">
+            <nav
+                class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 z-50"
+                aria-label="Global"
+            >
+                <div class="flex lg:flex-1">
+                    <a href="./index.html" class="-m-1.5 p-1.5 z-50">
+                        <img
+                            class="h-8 w-auto"
+                            src="./src/assets/icons/coffee-cup.png"
+                            alt=""
+                        />
+                    </a>
+                </div>
+                <div class="flex lg:hidden">
+                    <button
+                        type="button"
+                        id="mobileButton"
+                        class="text-gray-700 -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 z-50"
+                    >
+                        <svg
+                            class="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            aria-hidden="true"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                            />
+                        </svg>
+                    </button>
+                </div>
+                <div class="hidden lg:flex lg:gap-x-12">
+                    <a
+                        href="./src/pages/about.html"
+                        class="text-gray-900 text-sm font-semibold leading-6"
+                        >About us</a
+                    >
+                    <a
+                        href="./src/pages/store.html"
+                        class="text-gray-900 text-sm font-semibold leading-6"
+                        >Store</a
+                    >
+                    <a
+                        href="./src/pages/contact.html"
+                        class="text-gray-900 text-sm font-semibold leading-6"
+                        >Contact</a
+                    >
+                </div>
+                <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                    <a href="./src/pages/cart.html">
+                        <img
+                            class="size-9"
+                            src="./src/assets/icons/shopping-cart.svg"
+                            alt=""
+                        />
+                    </a>
+                </div>
+            </nav>
+            <div id="mobileMenu" class="hidden lg:hidden z-50" role="dialog" aria-modal="true">
+                <div class="fixed inset-0 z-10"></div>
+                <div
+                    class="sm:ring-gray-900/10 fixed inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 bg-light-brown"
+                >
+                    <div class="mt-6 flow-root">
+                        <div class="divide-gray-500/10 -my-6 divide-y">
+                            <div class="space-y-2 py-6">
+                                <div class="-mx-3">
+                                    <div
+                                        class="mt-12 space-y-2"
+                                        id="disclosure-1"
+                                    >
+                                        <a
+                                            href="./src/pages/about.html"
+                                            class="text-gray-900 hover:bg-gray-50 block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7"
+                                            >About us</a
+                                        >
+                                        <a
+                                            href="./src/pages/store.html"
+                                            class="text-gray-900 hover:bg-gray-50 block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7"
+                                            >Store</a
+                                        >
+                                        <a
+                                            href="./src/pages/contact.html"
+                                            class="text-gray-900 hover:bg-gray-50 block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7"
+                                            >Contact</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="py-6">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="mainDisplay">
+            <div class="bg-white">
+            </div>
+                <div class="mx-auto max-w-2xl py-3 sm:py-48 lg:py-24">
+                    <div class="text-center">
+                        <h1 class="text-2x1 font-bold tracking-tight text-gray-900 sm:text-6xl">Discover Your Perfect Brew</h1>
+                        <p class="mt-6 text-lg leading-8 text-gray-600">Explore our curated selection of premium coffee beans, freshly roasted and delivered to your door.</p>
+                        <div class="mt-10 flex items-center justify-center gap-x-6">
+                            <a href="./src/pages/store.html" class="rounded-md bg-light-brown px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Browse</a>
+                            <a href="./src/pages/about.html" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white py-24 sm:py-26">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                    <dt class="text-base leading-7 text-gray-600">Cups of coffee served</dt>
+                    <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">+12,000</dd>
+                </div>
+                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                    <dt class="text-base leading-7 text-gray-600">Varieties Available</dt>
+                    <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">+10</dd>
+                </div>
+                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                    <dt class="text-base leading-7 text-gray-600">Satisfied customers</dt>
+                    <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">+5,000</dd>
+                </div>
+                </dl>
+            </div>
+            </div>
+        </main>
+        <footer class="bg-light-brown">
+            <div class="mx-auto flex max-w-7xl items-center justify-between p-7 lg:px-8 z-50">
+                <div class="container flex flex-wrap items-center justify-center mx-auto space-y-4 sm:justify-between sm:space-y-0">
+                    <div class="flex flex-row pr-3 space-x-4 sm:space-x-8">
+                        <ul class="flex flex-wrap items-center space-x-4 sm:space-x-8">
+                            <li>
+                                <a href="https://www.termsfeed.com/live/f7588e74-8998-4570-8dfd-d9f84723e765">Terms of Use</a>
+                            </li>
+                            <li>
+                                <a href="https://www.termsfeed.com/live/f7588e74-8998-4570-8dfd-d9f84723e765">Privacy</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="flex flex-wrap text-3xl pl-3 space-x-4 sm:space-x-8">
+                        <li>
+                            <a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://x.com/home"><i class="fa-brands fa-x-twitter"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <script src="../js/nav.js"></script>
+    </body>
+</html>

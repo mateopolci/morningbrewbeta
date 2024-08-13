@@ -1,0 +1,12 @@
+.mainDisplay {
+    height: calc(100vh - 176px);
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+/*Inyecta los estilos base y de plugins de tailwind*/
+@tailwind base;
+/*Inyecta las clases componentes y de plugins de tailwind*/
+@tailwind components;
+/*Inyecta las clases de utilidad y de plugins de tailwind*/
+@tailwind utilities;

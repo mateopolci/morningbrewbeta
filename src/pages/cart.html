@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MB - Cart</title>
+        <link rel="stylesheet" href="../styles/tailwind.css" />
+        <link rel="icon" href="../assets/icons/coffee-cup.png" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        </style>
+                <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');</style>
+            <script>
+                tailwind.config = {
+                    theme: {
+                        colors: {
+                            'light-green': '#606C38',
+                            'dark-green': '#283618',
+                            'light-brown': '#DDA15E',
+                            'dark-brown': '#BC6C25',
+                            white: '#FFFFFF',
+                        },
+                    },
+                };
+            </script>
+    </head>
+    <body class="flex min-h-screen flex-col">
+        <header class="bg-light-brown">
+            <nav
+                class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+                aria-label="Global"
+            >
+                <div class="flex lg:flex-1">
+                    <a href="../../index.html" class="z-50 -m-1.5 p-1.5">
+                        <img
+                            class="h-8 w-auto"
+                            src="../assets/icons/coffee-cup.png"
+                            alt=""
+                        />
+                    </a>
+                </div>
+                <div class="flex lg:hidden">
+                    <button
+                        type="button"
+                        id="mobileButton"
+                        class="text-gray-700 z-50 -m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
+                    >
+                        <svg
+                            class="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            aria-hidden="true"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                            />
+                        </svg>
+                    </button>
+                </div>
+                <div class="hidden lg:flex lg:gap-x-12">
+                    <a
+                        href="../pages/about.html"
+                        class="text-gray-900 text-sm font-semibold leading-6"
+                        >About us</a
+                    >
+                    <a
+                        href="../pages/store.html"
+                        class="text-gray-900 text-sm font-semibold leading-6"
+                        >Store</a
+                    >
+                    <a
+                        href="../pages/contact.html"
+                        class="text-gray-900 text-sm font-semibold leading-6"
+                        >Contact</a
+                    >
+                </div>
+                <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                    <a href="../pages/cart.html" id="cartButton">
+                        <img
+                            class="size-9"
+                            src="../assets/icons/shopping-cart.svg"
+                            alt=""
+                        />
+                    </a>
+                </div>
+            </nav>
+            <div
+                id="mobileMenu"
+                class="z-50 hidden lg:hidden"
+                role="dialog"
+                aria-modal="true"
+            >
+                <div class="fixed inset-0 z-10"></div>
+                <div
+                    class="sm:ring-gray-900/10 fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-light-brown px-6 py-6 sm:max-w-sm sm:ring-1"
+                >
+                    <div class="mt-6 flow-root">
+                        <div class="divide-gray-500/10 -my-6 divide-y">
+                            <div class="space-y-2 py-6">
+                                <div class="-mx-3">
+                                    <div
+                                        class="mt-12 space-y-2"
+                                        id="disclosure-1"
+                                    >
+                                        <a
+                                            href="./about.html"
+                                            class="text-gray-900 hover:bg-gray-50 block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7"
+                                            >About us</a
+                                        >
+                                        <a
+                                            href="./store.html"
+                                            class="text-gray-900 hover:bg-gray-50 block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7"
+                                            >Store</a
+                                        >
+                                        <a
+                                            href="./contact.html"
+                                            class="text-gray-900 hover:bg-gray-50 block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7"
+                                            >Contact</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="py-6"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="flex-1">
+            <div class="bg-white">
+                <div
+                    class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:px-0"
+                >
+                    <h1
+                        class="text-gray-900 text-center text-3xl font-extrabold tracking-tight sm:text-4xl"
+                    >
+                        Shopping Cart
+                    </h1>
+                    <form class="mt-12">
+                        <section aria-labelledby="cart-heading">
+                            <h2 id="cart-heading" class="sr-only">
+                                Items in your shopping cart
+                            </h2>
+                            <ul
+                                id="cartList"
+                                role="list"
+                                class="border-gray-200 divide-gray-200 divide-y border-b border-t"
+                            ></ul>
+                        </section>
+                        <section
+                            aria-labelledby="summary-heading"
+                            class="mt-10"
+                        >
+                            <h2 id="summary-heading" class="sr-only">
+                                Order summary
+                            </h2>
+                            <div>
+                                <dl class="space-y-4">
+                                    <div
+                                        class="flex items-center justify-between"
+                                    >
+                                        <dt
+                                            class="text-gray-900 text-base font-medium"
+                                        >
+                                            Total:
+                                        </dt>
+                                        <dd
+                                            id="total"
+                                            class="text-gray-900 ml-4 text-base font-medium"
+                                        ></dd>
+                                    </div>
+                                </dl>
+                            </div>
+                            <div class="mt-10">
+                                <button
+                                    type="submit"
+                                    class="bg-indigo-600 border-transparent hover:bg-indigo-700 focus:ring-offset-gray-50 focus:ring-indigo-500 text-black w-full rounded-md border px-4 py-3 text-base font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                >
+                                    Checkout
+                                </button>
+                            </div>
+                            <div class="mt-6 text-center text-sm">
+                                <p>
+                                    or
+                                    <a
+                                        href="../pages/store.html"
+                                        class="text-indigo-600 hover:text-indigo-500 font-medium"
+                                        >Continue Shopping<span
+                                            aria-hidden="true"
+                                        >
+                                            &rarr;</span
+                                        ></a
+                                    >
+                                </p>
+                            </div>
+                        </section>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer class="bg-light-brown">
+            <div
+                class="z-50 mx-auto flex max-w-7xl items-center justify-between p-7 lg:px-8"
+            >
+                <div
+                    class="container mx-auto flex flex-wrap items-center justify-center space-y-4 sm:justify-between sm:space-y-0"
+                >
+                    <div class="flex flex-row space-x-4 pr-3 sm:space-x-8">
+                        <ul
+                            class="flex flex-wrap items-center space-x-4 sm:space-x-8"
+                        >
+                            <li>
+                                <a
+                                    href="https://www.termsfeed.com/live/f7588e74-8998-4570-8dfd-d9f84723e765"
+                                    >Terms of Use</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.termsfeed.com/live/f7588e74-8998-4570-8dfd-d9f84723e765"
+                                    >Privacy</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <ul
+                        class="flex flex-wrap space-x-4 pl-3 text-3xl sm:space-x-8"
+                    >
+                        <li>
+                            <a href="https://www.instagram.com/"
+                                ><i class="fa-brands fa-square-instagram"></i
+                            ></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/"
+                                ><i class="fa-brands fa-square-facebook"></i
+                            ></a>
+                        </li>
+                        <li>
+                            <a href="https://x.com/home"
+                                ><i class="fa-brands fa-x-twitter"></i
+                            ></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <script src="../js/nav.js"></script>
+        <script src="../js/cart&store.js"></script>
+        <script src="../js/objects.js"></script>
+    </body>
+</html>
